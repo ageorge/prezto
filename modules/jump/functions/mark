@@ -1,0 +1,14 @@
+#
+# Mark directory.
+#
+
+mark() {
+	if (( $# == 0 )); then
+		MARK=$(basename "$(pwd)")
+	else
+		MARK="$1"
+	fi
+	if read -q \?"Mark $(pwd) as ${MARK}? (y/n) "; then
+		mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$MARK"
+	fi
+}

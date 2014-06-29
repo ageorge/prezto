@@ -1,0 +1,7 @@
+#
+# Unmark directory.
+#
+
+unmark() {
+	rm -i "$MARKPATH/$1"
+}
