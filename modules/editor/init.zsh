@@ -303,6 +303,10 @@ for keymap in 'emacs' 'viins'; do
 
   # Insert 'sudo ' at the beginning of the line.
   bindkey -M "$keymap" "$key_info[Control]X$key_info[Control]S" prepend-sudo
+
+  # I use CTRL-LEFT and CTRL-RIGHT!
+  bindkey -M "$keymap" "^[[1;5D" emacs-backward-word
+  bindkey -M "$keymap" "^[[1;5C" emacs-forward-word
 done
 
 # Do not expand .... to ../.. during incremental search.
