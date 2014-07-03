@@ -1,0 +1,12 @@
+#
+# Change to drupal directory.
+#
+
+cd_drupal_dir() {
+    dir=$(drush drupal-directory $1 2>/dev/null)
+    if [[ $? -eq 0 ]]; then
+        cd -P $dir 2>/dev/null
+    else
+        echo "Not such module/theme: $1"
+    fi
+}
