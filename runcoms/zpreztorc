@@ -35,6 +35,7 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'archive' \
   'jump' \
+  'drupal' \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt'
