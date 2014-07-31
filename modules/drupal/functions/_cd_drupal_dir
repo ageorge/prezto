@@ -5,3 +5,5 @@ word="$1"
 # We use the complete results for drush pm-enable because thats what we want.
 compadd $(drush --early=includes/complete.inc drush pm-enable "${word}")
 compadd files
+compadd private
+compadd temp
