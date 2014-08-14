@@ -15,13 +15,6 @@
 # Color output (auto set to 'no' on dumb terminals).
 zstyle ':prezto:*:*' color 'yes'
 
-# Set $TERM for 256 colors tmux.
-# Also put 'set -g default-terminal screen-256color' in .tmux.conf.
-# See http://stackoverflow.com/a/20557962.
-if [[ $COLORTERM == 'gnome-terminal' ]]; then
-    export TERM="xterm-256color"
-fi
-
 # Set the Zsh modules to load (man zshmodules).
 # zstyle ':prezto:load' zmodule 'attr' 'stat'
 
@@ -165,3 +158,10 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Auto start a session when Zsh is launched in a SSH connection.
 # zstyle ':prezto:module:tmux:auto-start' remote 'yes'
+
+# Set $TERM for 256 colors tmux.
+# Also put 'set -g default-terminal screen-256color' in .tmux.conf.
+# See http://stackoverflow.com/a/20557962.
+if [[ $COLORTERM == 'gnome-terminal' ]]; then
+    export TERM="xterm-256color"
+fi
