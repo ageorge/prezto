@@ -91,6 +91,11 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zpreztorc" ]]; then
   source "${ZDOTDIR:-$HOME}/.zpreztorc"
 fi
 
+# Source custom aliases (stored outside the prezto repository).
+if [[ -s "${ZDOTDIR:-$HOME}/.zsh_alias" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zsh_alias"
+fi
+
 # Disable color and theme in dumb terminals.
 if [[ "$TERM" == 'dumb' ]]; then
   zstyle ':prezto:*:*' color 'no'
