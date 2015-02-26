@@ -37,6 +37,7 @@ zstyle ':prezto:load' pmodule \
   'archive' \
   'jump' \
   'drupal' \
+  'composer' \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt'
