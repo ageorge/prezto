@@ -168,3 +168,6 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 if [[ $COLORTERM == 'gnome-terminal' ]]; then
     export TERM="xterm-256color"
 fi
+
+# Integrate with iTerm2.
+# zstyle ':prezto:module:tmux:iterm' integrate 'yes'
