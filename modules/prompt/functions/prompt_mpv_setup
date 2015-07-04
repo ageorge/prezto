@@ -27,6 +27,10 @@ function prompt_mpv_precmd {
   if (( $+functions[git-info] )); then
     git-info
   fi
+
+  if (( $+functions[python-info] )); then
+    python-info
+  fi
 }
 
 function prompt_mpv_setup {
@@ -65,8 +69,11 @@ function prompt_mpv_setup {
     'prompt' ' %F{blue}git%f$(coalesce "%b" "%p" "%c")%s' \
     'rprompt' '%A%B%S%a%d%m%r%U%u'
 
+  # Set python-info parameters.
+  zstyle ':prezto:module:python:info:virtualenv' format '(%v)'
+
   # Define prompts.
-  PROMPT='%F{cyan}${_prompt_mpv_pwd}%f${git_info:+${(e)git_info[prompt]}}%(!. %B%F{red}#%f%b.)${editor_info[keymap]} '
+  PROMPT='$python_info[virtualenv] %F{cyan}${_prompt_mpv_pwd}%f${git_info:+${(e)git_info[prompt]}}%(!. %B%F{red}#%f%b.)${editor_info[keymap]} '
   RPROMPT='${editor_info[overwrite]}%(?:: %F{red}⏎%f)${VIM:+" %B%F{green}V%f%b"}${git_info[rprompt]}'
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
