@@ -5,6 +5,10 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# Workoround for zsh + tmux + vim taken from http://www.economyofeffort.com/2014/07/04/zsh/
+export TERM=xterm-256color
+[ -n "$TMUX" ] && export TERM=screen-256color
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
