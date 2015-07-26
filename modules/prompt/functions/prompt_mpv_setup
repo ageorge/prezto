@@ -9,11 +9,26 @@ function prompt_mpv_pwd {
   local pwd="${PWD/#$HOME/~}"
 
   if [[ "$pwd" == (#m)[/~] ]]; then
-    _prompt_mpv_pwd="$MATCH"
-    unset MATCH
+    #_prompt_mpv_pwd="$MATCH"
+    #unset MATCH
   else
     _prompt_mpv_pwd="${${${(@j:/:M)${(@s:/:)pwd}##.#?}:h}%/}/${pwd:t}"
   fi
+}
+
+function prompt_mpv_help {
+    cat <<EOH
+git icons reference:
+
+  ✚    files added
+  ⬆    ahead
+  ⬇    behind
+  ✖    deleted files
+  ✱    modified files
+  ➜    renamed files
+  ✭    stashed
+  ◼    untracked files
+EOH
 }
 
 function prompt_mpv_precmd {
@@ -21,7 +36,7 @@ function prompt_mpv_precmd {
   unsetopt XTRACE KSH_ARRAYS
 
   # Format PWD.
-  prompt_mpv_pwd
+  #prompt_mpv_pwd
 
   # Get Git repository information.
   if (( $+functions[git-info] )); then
@@ -77,8 +92,8 @@ function prompt_mpv_setup {
 
   # Define prompts.
   PROMPT="
-"'%F{green}%n%f@%F{blue}%m%f ${VIM:+"%B%F{green}[vim]%f%b "}$python_info[virtualenv]%F{cyan}%~%f'"
-"'${editor_info[overwrite]}%(?::%F{red}♻ %f)${git_info[rprompt]}%f${git_info:+${(e)git_info[prompt]}}%(!. %B%F{red}#%f%b.)${editor_info[keymap]}'" "
+"'%F{green}%n%f@%F{blue}%m%f ${VIM:+"%B%F{green}[vim]%f%b "}$python_info[virtualenv]%F{cyan}$(pwd)'"
+"'${editor_info[overwrite]}%(?::%F{red}☢ %f)${git_info[rprompt]}%f${git_info:+${(e)git_info[prompt]}}%(!. %B%F{red}#%f%b.)${editor_info[keymap]}'" "
   RPROMPT=''
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
