@@ -91,9 +91,11 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zpreztorc" ]]; then
   source "${ZDOTDIR:-$HOME}/.zpreztorc"
 fi
 
-# Source custom aliases (stored outside the prezto repository).
-if [[ -s "${ZDOTDIR:-$HOME}/.zsh_alias" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zsh_alias"
+# Source custom files (stored outside the prezto repository).
+if [[ -s "${ZDOTDIR:-$HOME}/.zsh.d" ]]; then
+  for f in `ls "${ZDOTDIR:-$HOME}/.zsh.d"`; do
+    source "${ZDOTDIR:-$HOME}/.zsh.d/$f"
+  done;
 fi
 
 # Disable color and theme in dumb terminals.
