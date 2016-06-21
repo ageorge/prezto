@@ -92,7 +92,7 @@ function prompt_mpv_setup {
 
   # Define prompts.
   PROMPT="
-"'%F{green}%n%f@%F{blue}%m%f ${VIM:+"%B%F{green}[vim]%f%b "}$python_info[virtualenv]%F{cyan}$(pwd)'"
+"'%F{green}%n%f@%F{blue}%m%f ${OS_TENANT_NAME:+"%B%F{yellow}[$OS_TENANT_NAME]%f%b "}${VIM:+"%B%F{green}[vim]%f%b "}$python_info[virtualenv]%F{cyan}$(pwd)'"
 "'${editor_info[overwrite]}%(?::%F{red}☢ %f)${git_info[rprompt]}%f${git_info:+${(e)git_info[prompt]}}%(!. %B%F{red}#%f%b.)${editor_info[keymap]}'" "
   RPROMPT=''
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
