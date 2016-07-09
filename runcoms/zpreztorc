@@ -41,6 +41,7 @@ zstyle ':prezto:load' pmodule \
   'composer' \
   'python' \
   'syntax-highlighting' \
+  'colorize' \
   'history-substring-search' \
   'jsontools' \
   'prompt'
