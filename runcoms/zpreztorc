@@ -35,7 +35,7 @@ zstyle ':prezto:load' pmodule \
   'more-completion' \
   'git' \
   'archive' \
-  'jump' \
+  'autojump' \
   'drupal' \
   'grunt' \
   'composer' \
