@@ -1,9 +1,0 @@
-#
-# Copies the full path of a given file to the system or X Windows clipboard.
-#
-# Uses realpath --no-symlinks to get the path, so you need GNU coreutils.
-#
-copyfilepath() {
-  emulate -L zsh
-  realpath --no-symlinks --zero $1 | clipcopy
-}

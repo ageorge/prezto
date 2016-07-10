@@ -1,0 +1,19 @@
+#
+# Copies given path to the system or X Windows clipboard.
+#
+# If no path is given it copies the current working directory.
+#
+# copypath
+# copypath /etc/hosts
+# copypath /var/log
+#
+# Based on https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/copydir
+function copypath {
+  emulate -L zsh
+
+  if [ $# -eq 0 ]; then
+    print -n $PWD | clipcopy
+  else
+    realpath --no-symlinks --zero $1 | clipcopy
+  fi
+}
