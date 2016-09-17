@@ -88,12 +88,12 @@ function prompt_mpv_setup {
   zstyle ':prezto:module:python:info:virtualenv' format '%F{magenta}[%v] '
 
   # More characters:
-  # ☭ 😛 ♥ ♻ ★ ♲ ☢ ✪ 🐵 
+  # ☭ 😛 ♥ ♻ ★ ♲ ☢ ✪ 🐵 💀 💥 
 
   # Define prompts.
   PROMPT="
 "'%F{green}%n%f@%F{blue}%m%f ${OS_TENANT_NAME:+"%B%F{yellow}[$OS_TENANT_NAME]%f%b "}${VIM:+"%B%F{green}[vim]%f%b "}$python_info[virtualenv]%F{cyan}$(pwd)'"
-"'${editor_info[overwrite]}%(?::%F{red}☢ %f)${git_info[rprompt]}%f${git_info:+${(e)git_info[prompt]}}%(!. %B%F{red}#%f%b.)${editor_info[keymap]}'" "
+"'${editor_info[overwrite]}%(?::%F{red}💀 %f)${git_info[rprompt]}%f${git_info:+${(e)git_info[prompt]}}%(!. %B%F{red}#%f%b.)${editor_info[keymap]}'" "
   RPROMPT=''
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
